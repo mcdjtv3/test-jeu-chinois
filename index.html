@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8>
+        <title>Mahjong Solitaire Classic by Rafael Odon</title>
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1"/>                
+        <link rel="manifest" href="manifest.json">                    
+        <link rel="stylesheet" href="css/modal.css">
+        <link rel="stylesheet" href="css/index.css">                    
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">        
+        <script>
+            if (typeof navigator.serviceWorker !== 'undefined') {
+              navigator.serviceWorker.register('sw.js')
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="loader">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <div id="container" class="animatedHidden">                                  
+            <div id="topbar">                   
+                <div id="moves"></div>
+                <div id="time"></div>                
+                <div class="buttons">                    
+                    <button id="btnRanking">Ranking</button>
+                    <button id="btnSound">Sound Off</button>
+                    <button id="btnHint">☜ Hint</button>
+                    <button id="btnUndo">↻ Undo</button>
+                    <button id="btnNewGame">★ New</button>                    
+                </div>                
+            </div>
+            <canvas id="canvas"></canvas>                                    
+        </div>        
+        <div id="modal" class="animatedHidden">                        
+            <div id="modalBackground"></div>
+            <div id="modalWindow">                
+                <div class="modalHeader">Modal</div>                
+                <div class="modalBody">Mensagem</div>
+                <div class="modalFooter">
+                    <button class="modalOkButton">Ok</button>
+                    <button class="modalCancelButton">Cancel</button>
+                </div>
+            </div>            
+        </div>
+        <div id="version"></div>
+        <div id="combo" class="hidden">
+            <div id="comboBar"></div>
+            <div id="comboText"></div>
+        </div>         
+    </body>
+    
+    <script src="js/colors.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/loop.js"></script>
+    <script src="js/timer.js"></script>    
+    <script src="js/tween.js"></script>    
+    <script src="js/mahjong-utils.js"></script>    
+    <script src="js/mahjong-tiles.js"></script>    
+    <script src="js/mahjong-core.js"></script>
+    <script src="js/mahjong-solver.js"></script>    
+    <script src="js/mahjong-data.js"></script>
+    <script src="js/index.js"></script>        
+</html>

@@ -1,0 +1,219 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;    
+
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}            
+
+canvas{                
+    margin-top: 2em;
+}
+
+#version {
+    position: fixed;
+    font-family: sans-serif;
+    color: #FFF;
+    font-size: 0.8em;
+    width: 2em;
+    bottom: 0em;
+    right: 1em;
+    height: 1.2em;
+}
+
+/* TOPBAR */
+#topbar{
+    position: absolute;
+    width: 100%;              
+    line-height: 1.5em;
+    top: 0;                
+    width: 100%;                
+    background: #ff7803;  
+    font-family: sans-serif;
+    font-weight: bold;                
+    font-size: 1.1em;                 
+    box-shadow: 0vh 0vh 0.5vh rgba(0, 0, 0, 0.35);
+    color: #C40C0C;
+}
+
+#moves{
+    float: left;
+    color: #C40C0C;       
+    width: 10em;
+    margin-left: 0.5em; 
+}
+
+#time {
+    float: right;
+    width: 5em;    
+    text-align: right;
+    margin-right: 0.5em; 
+}
+
+#topbar>.buttons{                   
+    text-align: center;
+}
+
+#topbar>.buttons>button{
+    border: 0px;
+    border-radius: 0.5em;                    
+    margin: 0px;
+    padding: 0 1em 0 1em;
+    background: #C40C0C;                                                
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 2em;
+    line-height: 1em;
+    vertical-align: middle;
+    color: #FF8225;
+}
+
+#topabr button:hover{
+    background: #BDAEC6;
+}
+
+/* FADE IN/OUT ANIMATION */
+.animatedVisible {    
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}
+  
+.animatedHidden {
+    visibility: hidden;    
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s linear;
+}
+
+/* LOADER */
+#loader{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -5em;
+    margin-top: -5em;
+    opacity: 0.5;
+}
+.lds-dual-ring {
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 8em;
+    height: 8em;
+    margin: 0px;
+    border-radius: 50%;
+    border: 1em solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+
+/* RANKING */
+.ranking{
+    height: 40vh;    
+    width: 80vw;
+    overflow-y: auto;
+}
+
+.rankingTable{        
+    width: 100%;    
+    border-spacing: 0;
+}
+
+.rankingTable td,
+.rankingTable tr{    
+    margin:0px;
+    padding:0px;
+    height: 1em;
+    line-height: 1em;
+}
+
+.rankingTable tr{
+    border-top: 1px solid #c29b6d;
+}
+
+.rankingTable tr:nth-child(odd){
+    background-color: #e3d7bf;
+}
+
+.rankingTable tr td:first-child{
+    font-weight: bold;
+}
+
+.rankingTable tr.lastVictory{
+    font-weight: bold;
+    color: crimson;
+}
+
+.hidden{
+    display: none;
+}
+
+/* COMBO */
+#combo{
+    position: fixed;
+    top: 10vh;
+    right: 0.7em;    
+    width: 7em;
+    height: 1.7em;
+    background: #ad8d7f;
+    border-radius: 0.5em;
+    box-shadow: -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.25);    
+    padding: 0.2em;
+    opacity: 0.75;
+}
+
+#comboBar{
+    width: 100%;
+    height: 100%;        
+    background: crimson;
+    border-radius: 0.5em;
+}
+
+#comboText{
+    color: #FFF;
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -1.3em;    
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.animatedZoomInOut{
+    animation: zoom-in-zoom-out 500ms;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.2, 1.2);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
